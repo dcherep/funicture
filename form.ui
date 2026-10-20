@@ -19,6 +19,26 @@
      <property name="title">
       <string>Фильтр</string>
      </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>894</width>
+           <height>411</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2"/>
+        </widget>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item row="1" column="1">
@@ -36,11 +56,17 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>800</x>
+        <x>650</x>
         <y>20</y>
-        <width>49</width>
-        <height>16</height>
+        <width>181</width>
+        <height>20</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
       </property>
       <property name="text">
        <string>ФИО</string>

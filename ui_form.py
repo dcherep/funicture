@@ -16,7 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QLabel,
-    QPushButton, QSizePolicy, QWidget)
+    QPushButton, QScrollArea, QSizePolicy, QVBoxLayout,
+    QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -27,6 +28,20 @@ class Ui_Widget(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.groupBox_2 = QGroupBox(Widget)
         self.groupBox_2.setObjectName(u"groupBox_2")
+        self.verticalLayout = QVBoxLayout(self.groupBox_2)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.scrollArea = QScrollArea(self.groupBox_2)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 894, 411))
+        self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout.addWidget(self.scrollArea)
+
 
         self.gridLayout.addWidget(self.groupBox_2, 1, 0, 1, 1)
 
@@ -39,7 +54,9 @@ class Ui_Widget(object):
         self.groupBox.setObjectName(u"groupBox")
         self.label = QLabel(self.groupBox)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(800, 20, 49, 16))
+        self.label.setGeometry(QRect(650, 20, 181, 20))
+        self.label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label.setAutoFillBackground(False)
         self.pushButton = QPushButton(self.groupBox)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(860, 20, 80, 24))
