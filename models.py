@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, ForeignKey, Date
-from sqlalchemy.orm import DeclarativeBase, Session
+from sqlalchemy.orm import DeclarativeBase, Session, relationship
 
 engine = create_engine("postgresql://admin:12345@217.71.129.139:6075/furniture")
 
@@ -14,6 +14,7 @@ class User(Base):
     login=Column(String,nullable=False )
     password=Column(String,nullable=False)
     role_id=Column(Integer,ForeignKey("roles.id"),nullable=False)
+    role=relationship("Role", lazy="joined")
 
 class Role(Base):
     __tablename__="roles"
