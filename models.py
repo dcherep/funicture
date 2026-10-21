@@ -73,6 +73,9 @@ class Tovar(Base):
     supplier_id=Column(Integer,ForeignKey("suppliers.id"),nullable=False )
     manufactures_id=Column(Integer,ForeignKey("manufactures.id"),nullable=False )
     category_id=Column(Integer,ForeignKey("category.id"),nullable=False )
+    supplier = relationship("Suppliers", lazy="joined")
+    manufacture = relationship("Manufactures", lazy="joined")
+    category = relationship("Category", lazy="joined")
 
 class Order_tovar(Base):
     __tablename__="order_tovar"
