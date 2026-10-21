@@ -13,12 +13,15 @@ class ShowProduct(QWidget):
         layout.setContentsMargins(0,0,0,0)
         layout.addWidget(self.ui)
 
+        self.ui.l_2.setText(tovar.category.title)
+        self.ui.l_9.setText(tovar.name)
         self.ui.l_10.setText(tovar.description)
         self.ui.l_11.setText(tovar.manufacture.title)
         self.ui.l_12.setText(tovar.supplier.title)
         self.ui.l_13.setText(str(tovar.price))
         self.ui.l_14.setText(tovar.ed_izm)
         self.ui.l_15.setText(str(tovar.count))
+        self.ui.l_16.setText(str(tovar.sale))
         if tovar.photo !='':
              self.ui.l_1.setPixmap(QPixmap('' + tovar.photo))
         else:
