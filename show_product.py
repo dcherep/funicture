@@ -14,8 +14,8 @@ class ShowProduct(QWidget):
         layout.addWidget(self.ui)
 
         self.ui.l_10.setText(tovar.description)
-        self.ui.l_11.setText(tovar.manufactures.title)
-        self.ui.l_12.setText(tovar.suppliers.title)
+        self.ui.l_11.setText(tovar.manufacture.title)
+        self.ui.l_12.setText(tovar.supplier.title)
         self.ui.l_13.setText(str(tovar.price))
         self.ui.l_14.setText(tovar.ed_izm)
         self.ui.l_15.setText(str(tovar.count))
