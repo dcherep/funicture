@@ -13,7 +13,46 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" rowstretch="1,10" columnstretch="5,0">
+  <layout class="QGridLayout" name="gridLayout" rowstretch="1,10" columnstretch="5,2,0">
+   <item row="0" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>10</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>ФИО</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>10</y>
+        <width>75</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Выйти</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
@@ -30,8 +69,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>894</width>
-           <height>411</height>
+           <width>652</width>
+           <height>418</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2"/>
@@ -46,43 +85,112 @@
      <property name="title">
       <string/>
      </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QLabel" name="label">
+     <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
        <rect>
-        <x>650</x>
-        <y>20</y>
-        <width>181</width>
-        <height>20</height>
+        <x>10</x>
+        <y>10</y>
+        <width>141</width>
+        <height>58</height>
        </rect>
       </property>
-      <property name="layoutDirection">
-       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      <property name="title">
+       <string>Скидка</string>
       </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>ФИО</string>
-      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <item>
+          <property name="text">
+           <string>Все диапазоны</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>0-10.99%</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>11-14.99%</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>15% и более</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
-        <x>860</x>
-        <y>20</y>
-        <width>80</width>
-        <height>24</height>
+        <x>0</x>
+        <y>70</y>
+        <width>261</width>
+        <height>160</height>
        </rect>
       </property>
+      <property name="title">
+       <string>Сортировка</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QRadioButton" name="radioButton">
+         <property name="text">
+          <string>Без сортировки</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="text">
+          <string>Стоимость(по возрастанию)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_3">
+         <property name="text">
+          <string>Стоимость(по убыванию)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_4">
+         <property name="text">
+          <string>Количество(по возрастанию)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_5">
+         <property name="text">
+          <string>Количество(по убыванию)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string>Выйти</string>
+       <string>Всего:</string>
       </property>
      </widget>
     </widget>

@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QLabel,
-    QPushButton, QScrollArea, QSizePolicy, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QGroupBox,
+    QLabel, QPushButton, QRadioButton, QScrollArea,
+    QSizePolicy, QVBoxLayout, QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -26,6 +26,19 @@ class Ui_Widget(object):
         Widget.resize(973, 526)
         self.gridLayout = QGridLayout(Widget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.groupBox = QGroupBox(Widget)
+        self.groupBox.setObjectName(u"groupBox")
+        self.label = QLabel(self.groupBox)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(670, 10, 181, 16))
+        self.label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label.setAutoFillBackground(False)
+        self.pushButton = QPushButton(self.groupBox)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(870, 10, 75, 24))
+
+        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 3)
+
         self.groupBox_2 = QGroupBox(Widget)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.verticalLayout = QVBoxLayout(self.groupBox_2)
@@ -35,7 +48,7 @@ class Ui_Widget(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 894, 411))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 652, 418))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -47,25 +60,64 @@ class Ui_Widget(object):
 
         self.groupBox_3 = QGroupBox(Widget)
         self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_4 = QGroupBox(self.groupBox_3)
+        self.groupBox_4.setObjectName(u"groupBox_4")
+        self.groupBox_4.setGeometry(QRect(10, 10, 141, 58))
+        self.verticalLayout_3 = QVBoxLayout(self.groupBox_4)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.comboBox = QComboBox(self.groupBox_4)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.verticalLayout_3.addWidget(self.comboBox)
+
+        self.groupBox_5 = QGroupBox(self.groupBox_3)
+        self.groupBox_5.setObjectName(u"groupBox_5")
+        self.groupBox_5.setGeometry(QRect(0, 70, 261, 160))
+        self.verticalLayout_4 = QVBoxLayout(self.groupBox_5)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.radioButton = QRadioButton(self.groupBox_5)
+        self.radioButton.setObjectName(u"radioButton")
+
+        self.verticalLayout_4.addWidget(self.radioButton)
+
+        self.radioButton_2 = QRadioButton(self.groupBox_5)
+        self.radioButton_2.setObjectName(u"radioButton_2")
+
+        self.verticalLayout_4.addWidget(self.radioButton_2)
+
+        self.radioButton_3 = QRadioButton(self.groupBox_5)
+        self.radioButton_3.setObjectName(u"radioButton_3")
+
+        self.verticalLayout_4.addWidget(self.radioButton_3)
+
+        self.radioButton_4 = QRadioButton(self.groupBox_5)
+        self.radioButton_4.setObjectName(u"radioButton_4")
+
+        self.verticalLayout_4.addWidget(self.radioButton_4)
+
+        self.radioButton_5 = QRadioButton(self.groupBox_5)
+        self.radioButton_5.setObjectName(u"radioButton_5")
+
+        self.verticalLayout_4.addWidget(self.radioButton_5)
+
+        self.label_2 = QLabel(self.groupBox_3)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(20, 250, 101, 31))
+        font = QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        self.label_2.setFont(font)
 
         self.gridLayout.addWidget(self.groupBox_3, 1, 1, 1, 1)
-
-        self.groupBox = QGroupBox(Widget)
-        self.groupBox.setObjectName(u"groupBox")
-        self.label = QLabel(self.groupBox)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(650, 20, 181, 20))
-        self.label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.label.setAutoFillBackground(False)
-        self.pushButton = QPushButton(self.groupBox)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(860, 20, 80, 24))
-
-        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 2)
 
         self.gridLayout.setRowStretch(0, 1)
         self.gridLayout.setRowStretch(1, 10)
         self.gridLayout.setColumnStretch(0, 5)
+        self.gridLayout.setColumnStretch(1, 2)
 
         self.retranslateUi(Widget)
 
@@ -74,10 +126,23 @@ class Ui_Widget(object):
 
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Widget", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("Widget", u"\u0424\u0438\u043b\u044c\u0442\u0440", None))
-        self.groupBox_3.setTitle("")
         self.groupBox.setTitle("")
         self.label.setText(QCoreApplication.translate("Widget", u"\u0424\u0418\u041e", None))
         self.pushButton.setText(QCoreApplication.translate("Widget", u"\u0412\u044b\u0439\u0442\u0438", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("Widget", u"\u0424\u0438\u043b\u044c\u0442\u0440", None))
+        self.groupBox_3.setTitle("")
+        self.groupBox_4.setTitle(QCoreApplication.translate("Widget", u"\u0421\u043a\u0438\u0434\u043a\u0430", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Widget", u"\u0412\u0441\u0435 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u044b", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Widget", u"0-10.99%", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("Widget", u"11-14.99%", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("Widget", u"15% \u0438 \u0431\u043e\u043b\u0435\u0435", None))
+
+        self.groupBox_5.setTitle(QCoreApplication.translate("Widget", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", None))
+        self.radioButton.setText(QCoreApplication.translate("Widget", u"\u0411\u0435\u0437 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438", None))
+        self.radioButton_2.setText(QCoreApplication.translate("Widget", u"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c(\u043f\u043e \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u0430\u043d\u0438\u044e)", None))
+        self.radioButton_3.setText(QCoreApplication.translate("Widget", u"\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c(\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e)", None))
+        self.radioButton_4.setText(QCoreApplication.translate("Widget", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e(\u043f\u043e \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u0430\u043d\u0438\u044e)", None))
+        self.radioButton_5.setText(QCoreApplication.translate("Widget", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e(\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e)", None))
+        self.label_2.setText(QCoreApplication.translate("Widget", u"\u0412\u0441\u0435\u0433\u043e:", None))
     # retranslateUi
 
