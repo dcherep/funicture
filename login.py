@@ -1,6 +1,7 @@
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QMessageBox, QWidget
 from sqlalchemy.orm import Session
+from PySide6.QtGui import QIcon, QPixmap
 from models import *
 
 
@@ -10,6 +11,9 @@ class Login(QWidget):
         loader=QUiLoader()
         self.ui = loader.load("login.ui", self)
         self.main_window = main_window
+        self.setWindowTitle('Авторизация')
+        self.setWindowIcon(QIcon('icon.ico'))
+        self.ui.label_3.setPixmap(QPixmap('icon.ico'))
         self.ui.pushButton.clicked.connect(self.check_login)
         self.ui.pushButton_2.clicked.connect(self.close)
 

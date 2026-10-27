@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from models import create,engine, User, Tovar, Manufactures,Suppliers
 from login import Login
 from show_product import ShowProduct
+from add_product import AddProduct
 
 
 class Widget(QWidget):
@@ -15,6 +16,7 @@ class Widget(QWidget):
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
         self.user =None
+        self.window_add=None
         create()
         self.setWindowIcon(QIcon('icon.ico'))
 
@@ -25,8 +27,13 @@ class Widget(QWidget):
         self.ui.radioButton_3.toggled.connect(self.load_tovar)
         self.ui.radioButton_4.toggled.connect(self.load_tovar)
         self.ui.radioButton_5.toggled.connect(self.load_tovar)
+        self.ui.lineEdit.textChanged.connect(self.load_tovar)
+        self.ui.pushButton_2.clicked.connect(self.show_add)
 
-
+    def show_add(self):
+        if self.window_add is None:
+            self.window_add=AddProduct(self)
+        self.window_add.show()
 
 
     def load(self):
@@ -36,7 +43,7 @@ class Widget(QWidget):
             #self.ui.gridLayout.setColumnStretch(0,0)
         elif self.user.role.id == 2:
             self.ui.groupBox_3.show()
-            #self.ui.gridLayout.setColumnStretch(0,1)
+            #$self.ui.gridLayout.setColumnStretch(0,1)
         elif self.user.role.id == 3:
             self.ui.groupBox_2.hide()
             self.ui.gridLayout.setColumnStretch(0,0)
@@ -48,11 +55,10 @@ class Widget(QWidget):
     def load_tovar(self):
         layout = self.ui.scrollAreaWidgetContents.layout()
         while layout.count():
-            child=layout.takeAt(0).widget().deleteLater()
+            layout.takeAt(0).widget().deleteLater()
 
         with Session(engine) as db:
             tovars= db.query(Tovar).all()
-
 
             if self.ui.comboBox.currentIndex()==1:
                 tovars = [t for t in tovars if t.sale < 11]
@@ -61,7 +67,6 @@ class Widget(QWidget):
             elif self.ui.comboBox.currentIndex()==3:
                 tovars = [t for t in tovars if t.sale >= 15]
 
-            self.ui.label_2.setText(f'Всего: {len(tovars)}')
 
             if self.ui.radioButton_2.isChecked()==True:
                 tovars = sorted(tovars, key=lambda t:t.price)
@@ -75,6 +80,8 @@ class Widget(QWidget):
             for t in tovars:
                 tovar= ShowProduct(t)
                 layout.addWidget(tovar)
+
+            self.ui.label_2.setText(f'Всего: {len(tovars)}')
 
 
 

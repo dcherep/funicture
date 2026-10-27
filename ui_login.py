@@ -41,6 +41,11 @@ class Ui_Form(object):
         self.lineEdit_2 = QLineEdit(Form)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setGeometry(QRect(230, 180, 113, 24))
+        self.label_3 = QLabel(Form)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(300, 30, 81, 61))
+        self.label_3.setMaximumSize(QSize(100, 100))
+        self.label_3.setScaledContents(True)
 
         self.retranslateUi(Form)
 
@@ -55,5 +60,6 @@ class Ui_Form(object):
         self.label_2.setText(QCoreApplication.translate("Form", u"\u041f\u0430\u0440\u043e\u043b\u044c", None))
         self.lineEdit.setText(QCoreApplication.translate("Form", u"94d5ous@gmail.com", None))
         self.lineEdit_2.setText(QCoreApplication.translate("Form", u"uzWC67", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"TextLabel", None))
     # retranslateUi
 

@@ -2,13 +2,18 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QMessageBox, QWidget, QVBoxLayout
 from PySide6.QtGui import QPixmap
 from models import create,engine, User, Tovar, Manufactures,Suppliers
+from add_product import AddProduct
 
 
 class ShowProduct(QWidget):
-    def __init__(self, tovar,parent=None):
+    def __init__(self, tovar, parent=None):
         super().__init__(parent)
         loader=QUiLoader()
         self.ui = loader.load("ShowProduct.ui", self)
+        #self.main_window = main_window
+        #self.tovar = tovar
+        #self.edit_window=None
+
         layout=QVBoxLayout(self)
         layout.setContentsMargins(0,0,0,0)
         layout.addWidget(self.ui)
@@ -26,7 +31,7 @@ class ShowProduct(QWidget):
         self.ui.l_10.setText(tovar.description)
         self.ui.l_11.setText(tovar.manufacture.title)
         self.ui.l_12.setText(tovar.supplier.title)
-        if tovar.sale>0 : #& tovar.count>0:
+        if tovar.sale>0 :
             price_sum=tovar.price-tovar.price*tovar.sale/100.
             self.ui.l_13.setText(f'<span style="color:red;text-decoration: line-through;">{tovar.price:.2f}</span> <span>{price_sum:.2f}<span/>')
         self.ui.l_14.setText(tovar.ed_izm)
@@ -37,5 +42,12 @@ class ShowProduct(QWidget):
              self.ui.l_1.setPixmap(QPixmap('' + tovar.photo))
         else:
             self.ui.l_1.setPixmap(QPixmap('picture.png'))
+
+        self.ui.pushButton_2.clicked.connect(self.show_edit)
+
+    def show_edit(self):
+        if self.edit_window is None:
+            self.edit_window=AddProduct(self.main_window,self.tovar)
+        self.edit_window.show()
 
 
