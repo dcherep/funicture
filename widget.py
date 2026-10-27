@@ -8,6 +8,7 @@ from models import create,engine, User, Tovar, Manufactures,Suppliers
 from login import Login
 from show_product import ShowProduct
 from add_product import AddProduct
+from edit_product import EditProduct
 
 
 class Widget(QWidget):
@@ -17,8 +18,10 @@ class Widget(QWidget):
         self.ui.setupUi(self)
         self.user =None
         self.window_add=None
+
         create()
         self.setWindowIcon(QIcon('icon.ico'))
+        self.setWindowTitle('Главная')
 
         self.ui.pushButton.clicked.connect(self.logout)
         self.ui.comboBox.currentIndexChanged.connect(self.load_tovar)
@@ -29,6 +32,7 @@ class Widget(QWidget):
         self.ui.radioButton_5.toggled.connect(self.load_tovar)
         self.ui.lineEdit.textChanged.connect(self.load_tovar)
         self.ui.pushButton_2.clicked.connect(self.show_add)
+
 
     def show_add(self):
         if self.window_add is None:
@@ -77,8 +81,12 @@ class Widget(QWidget):
             elif self.ui.radioButton_5.isChecked()==True:
                 tovars = sorted(tovars, key=lambda t:t.count, reverse=True)
 
+            search = self.ui.lineEdit.text().strip().lower()
+            if len(search)>0:
+                tovars = [t for t in tovars if t.articul.lower().find(search) != -1 or t.name.lower().find(search) != -1 or t.description.lower().find(search) != -1]
+
             for t in tovars:
-                tovar= ShowProduct(t)
+                tovar= ShowProduct(t,self)
                 layout.addWidget(tovar)
 
             self.ui.label_2.setText(f'Всего: {len(tovars)}')

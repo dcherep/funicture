@@ -126,7 +126,7 @@
    <item row="10" column="1" colspan="2">
     <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>|Удалить</string>
+      <string>Удалить</string>
      </property>
     </widget>
    </item>

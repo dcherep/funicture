@@ -1,5 +1,6 @@
+import os
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtWidgets import QMessageBox, QWidget
+from PySide6.QtWidgets import QMessageBox, QWidget, QFileDialog
 from sqlalchemy.orm import Session
 from PySide6.QtGui import QIcon, QPixmap
 from models import *
@@ -11,12 +12,36 @@ class AddProduct(QWidget):
         self.ui = loader.load("add_product.ui", self)
         self.main_window = main_window
         self.setWindowTitle('Добавить товар')
+        self.setWindowIcon(QIcon('icon.ico'))
         self.tovar=tovar
         self.load_combo_box()
         self.load_tovar()
         self.ui.pushButton.clicked.connect(self.back_to_main)
         self.ui.pushButton_3.clicked.connect(self.cancel)
         self.ui.pushButton_2.clicked.connect(self.save)
+        self.ui.pushButton_4.clicked.connect(self.open_file_dialog)
+
+    def open_file_dialog(self):
+        file_path, _ = QFileDialog.getOpenFileName(self, "Выберите изображение", '.' , "Изображение (*.png *.jpg *.jpeg *.bmp)")
+        if file_path:
+            file_name = os.path.basename(file_path)
+            self.ui.lineEdit_4.setText(file_name)
+            self.load_image()
+
+    def load_image(self):
+        file_path = self.ui.lineEdit_4.text().strip()
+        if not file_path:
+            self.ui.label_13.setText("Поле ввода пустое!")
+            return
+        file_path = '' + file_path
+        if not os.path.exists(file_path):
+            self.ui.label_13.setText("Файл не найден! Проверьте путь.")
+            return
+        pixmap = QPixmap(file_path)
+        if pixmap.isNull():
+            self.ui.label_13.setText("Не удалось загрузить изображение. \nНеверный формат или битый файл.")
+        else:
+            self.ui.label_13.setPixmap(pixmap)
 
     def load_tovar(self):
         if self.tovar != None:
@@ -30,6 +55,7 @@ class AddProduct(QWidget):
             self.ui.spinBox.setValue(self.tovar.count)
             self.ui.doubleSpinBox_2.setValue(self.tovar.sale)
             self.ui.lineEdit_4.setText(self.tovar.photo)
+            self.load_image()
 
     def save(self):
         if self.check() == False: return

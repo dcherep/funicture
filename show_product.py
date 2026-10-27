@@ -3,16 +3,17 @@ from PySide6.QtWidgets import QMessageBox, QWidget, QVBoxLayout
 from PySide6.QtGui import QPixmap
 from models import create,engine, User, Tovar, Manufactures,Suppliers
 from add_product import AddProduct
+from edit_product import EditProduct
 
 
 class ShowProduct(QWidget):
-    def __init__(self, tovar, parent=None):
+    def __init__(self, tovar, main_window,parent=None):
         super().__init__(parent)
         loader=QUiLoader()
         self.ui = loader.load("ShowProduct.ui", self)
-        #self.main_window = main_window
-        #self.tovar = tovar
-        #self.edit_window=None
+        self.main_window = main_window
+        self.tovar = tovar
+        self.edit_window=None
 
         layout=QVBoxLayout(self)
         layout.setContentsMargins(0,0,0,0)
@@ -44,10 +45,16 @@ class ShowProduct(QWidget):
             self.ui.l_1.setPixmap(QPixmap('picture.png'))
 
         self.ui.pushButton_2.clicked.connect(self.show_edit)
+        #self.ui.pushButton.clicked.connect(self.delete)
 
     def show_edit(self):
         if self.edit_window is None:
-            self.edit_window=AddProduct(self.main_window,self.tovar)
+            self.edit_window=EditProduct(self.main_window,self.tovar)
         self.edit_window.show()
+
+    #def delete(self):
+
+
+
 
 

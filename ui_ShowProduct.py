@@ -150,7 +150,7 @@ class Ui_Form(object):
         self.l_11.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.l_8.setText(QCoreApplication.translate("Form", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043d\u0430 \u0441\u043a\u043b\u0430\u0434\u0435:", None))
         self.l_9.setText(QCoreApplication.translate("Form", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u0430", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"|\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
         self.l_3.setText(QCoreApplication.translate("Form", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u0430:", None))
         self.l_12.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.l_16.setText(QCoreApplication.translate("Form", u"TextLabel", None))

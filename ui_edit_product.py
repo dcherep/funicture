@@ -1,0 +1,147 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'edit_product.ui'
+##
+## Created by: Qt User Interface Compiler version 6.11.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QLabel,
+    QLineEdit, QPushButton, QSizePolicy, QSpinBox,
+    QTextEdit, QWidget)
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(491, 703)
+        self.comboBox = QComboBox(Form)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(185, 170, 65, 24))
+        self.label_8 = QLabel(Form)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(70, 330, 28, 16))
+        self.doubleSpinBox_2 = QDoubleSpinBox(Form)
+        self.doubleSpinBox_2.setObjectName(u"doubleSpinBox_2")
+        self.doubleSpinBox_2.setGeometry(QRect(185, 422, 101, 25))
+        self.doubleSpinBox_2.setMaximum(1000.000000000000000)
+        self.lineEdit_4 = QLineEdit(Form)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setGeometry(QRect(185, 453, 121, 24))
+        self.doubleSpinBox = QDoubleSpinBox(Form)
+        self.doubleSpinBox.setObjectName(u"doubleSpinBox")
+        self.doubleSpinBox.setGeometry(QRect(185, 330, 101, 25))
+        self.doubleSpinBox.setDecimals(2)
+        self.doubleSpinBox.setMaximum(1000000.000000000000000)
+        self.label = QLabel(Form)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(170, 60, 271, 28))
+        font = QFont()
+        font.setPointSize(16)
+        font.setBold(True)
+        self.label.setFont(font)
+        self.label_6 = QLabel(Form)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(70, 270, 85, 16))
+        self.label_2 = QLabel(Form)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(70, 110, 46, 16))
+        self.lineEdit = QLineEdit(Form)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(181, 107, 91, 24))
+        self.pushButton_4 = QPushButton(Form)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setGeometry(QRect(337, 453, 80, 24))
+        self.label_13 = QLabel(Form)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(191, 487, 100, 51))
+        self.label_13.setMaximumSize(QSize(100, 100))
+        self.label_13.setScaledContents(True)
+        self.lineEdit_3 = QLineEdit(Form)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setGeometry(QRect(185, 361, 101, 24))
+        self.label_3 = QLabel(Form)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(70, 140, 83, 16))
+        self.label_11 = QLabel(Form)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(70, 422, 39, 16))
+        self.spinBox = QSpinBox(Form)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setGeometry(QRect(185, 391, 101, 25))
+        self.spinBox.setMaximum(100)
+        self.pushButton_3 = QPushButton(Form)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setGeometry(QRect(271, 567, 80, 24))
+        self.pushButton_2 = QPushButton(Form)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(181, 567, 80, 24))
+        self.comboBox_3 = QComboBox(Form)
+        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.comboBox_3.setGeometry(QRect(185, 300, 91, 24))
+        self.label_10 = QLabel(Form)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(70, 391, 65, 16))
+        self.lineEdit_2 = QLineEdit(Form)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setGeometry(QRect(181, 137, 91, 24))
+        self.pushButton = QPushButton(Form)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(70, 46, 80, 24))
+        self.label_7 = QLabel(Form)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(70, 300, 63, 16))
+        self.label_9 = QLabel(Form)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(70, 361, 109, 16))
+        self.comboBox_2 = QComboBox(Form)
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setGeometry(QRect(185, 270, 101, 24))
+        self.textEdit = QTextEdit(Form)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(185, 200, 232, 64))
+        self.label_12 = QLabel(Form)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(70, 453, 68, 16))
+        self.label_4 = QLabel(Form)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(70, 170, 56, 16))
+        self.label_5 = QLabel(Form)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(70, 200, 55, 16))
+
+        self.retranslateUi(Form)
+
+        QMetaObject.connectSlotsByName(Form)
+    # setupUi
+
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.label_8.setText(QCoreApplication.translate("Form", u"\u0426\u0435\u043d\u0430", None))
+        self.label.setText(QCoreApplication.translate("Form", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u0430", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"\u0410\u0440\u0442\u0438\u043a\u0443\u043b", None))
+        self.pushButton_4.setText(QCoreApplication.translate("Form", u"\u041e\u0431\u0437\u043e\u0440", None))
+        self.label_13.setText(QCoreApplication.translate("Form", u"TextLabel", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435", None))
+        self.label_11.setText(QCoreApplication.translate("Form", u"\u0421\u043a\u0438\u0434\u043a\u0430", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Form", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
+        self.label_10.setText(QCoreApplication.translate("Form", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u041d\u0430\u0437\u0445\u0430\u0434", None))
+        self.label_7.setText(QCoreApplication.translate("Form", u"\u041f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a", None))
+        self.label_9.setText(QCoreApplication.translate("Form", u"\u0415\u0434\u0438\u043d\u0438\u0446\u0430 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f", None))
+        self.label_12.setText(QCoreApplication.translate("Form", u"\u0424\u043e\u0442\u043e \u0442\u043e\u0432\u0430\u0440\u0430", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
+    # retranslateUi
+
