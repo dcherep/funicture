@@ -137,6 +137,7 @@ class Ui_Form(object):
 
         self.doubleSpinBox = QDoubleSpinBox(Form)
         self.doubleSpinBox.setObjectName(u"doubleSpinBox")
+        self.doubleSpinBox.setDecimals(2)
 
         self.gridLayout.addWidget(self.doubleSpinBox, 12, 1, 1, 1)
 
