@@ -9,6 +9,7 @@ from login import Login
 from show_product import ShowProduct
 from add_product import AddProduct
 from edit_product import EditProduct
+from orders import Orders
 
 
 class Widget(QWidget):
@@ -18,6 +19,7 @@ class Widget(QWidget):
         self.ui.setupUi(self)
         self.user =None
         self.window_add=None
+        self.window_orders=None
 
         create()
         self.setWindowIcon(QIcon('icon.ico'))
@@ -32,6 +34,12 @@ class Widget(QWidget):
         self.ui.radioButton_5.toggled.connect(self.load_tovar)
         self.ui.lineEdit.textChanged.connect(self.load_tovar)
         self.ui.pushButton_2.clicked.connect(self.show_add)
+        self.ui.pushButton_3.clicked.connect(self.show_orders)
+
+    def show_orders(self):
+        if self.window_orders is None:
+            self.window_orders = Orders(self)
+        self.window_orders.show()
 
 
     def show_add(self):
@@ -44,9 +52,13 @@ class Widget(QWidget):
         self.ui.label.setText(f'{self.user.surname} {self.user.name} {self.user.patr}')
         if self.user.role.id == 1:
             self.ui.groupBox_3.show()
+            self.ui.pushButton_2.show()   
+            self.ui.pushButton_3.show()
             #self.ui.gridLayout.setColumnStretch(0,0)
         elif self.user.role.id == 2:
             self.ui.groupBox_3.show()
+            self.ui.pushButton_2.show()   
+            self.ui.pushButton_3.show()
             #$self.ui.gridLayout.setColumnStretch(0,1)
         elif self.user.role.id == 3:
             self.ui.groupBox_2.hide()

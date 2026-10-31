@@ -78,19 +78,21 @@ class AddProduct(QWidget):
                 db.add(new_tovar)
             else:
                 t=db.merge(db.get(Tovar,self.tovar.id))
-                t.articul=self.ui.lineEdit.text(),
-                t.name= self.ui.lineEdit_2.text(),
-                t.category_id= int(self.ui.comboBox.currentData()),
-                t.description= self.ui.textEdit.toPlainText(),
-                t.manufactures_id= int(self.ui.comboBox_2.currentData()),
-                t.supplier_id= int(self.ui.comboBox_3.currentData()),
-                t.price= float(self.ui.doubleSpinBox.value()),
-                t.ed_izm= self.ui.lineEdit_3.text(),
-                t.count= self.ui.spinBox.value(),
-                t.sale= float(self.ui.doubleSpinBox_2.value()),
+                t.articul=self.ui.lineEdit.text()
+                t.name= self.ui.lineEdit_2.text()
+                t.category_id= int(self.ui.comboBox.currentData())
+                t.description= self.ui.textEdit.toPlainText()
+                t.manufactures_id= int(self.ui.comboBox_2.currentData())
+                t.supplier_id= int(self.ui.comboBox_3.currentData())
+                t.price= float(self.ui.doubleSpinBox.value())
+                t.ed_izm= self.ui.lineEdit_3.text()
+                t.count= self.ui.spinBox.value()
+                t.sale= float(self.ui.doubleSpinBox_2.value())
                 t.photo= self.ui.lineEdit_4.text()
             db.commit()
         self.main_window.load_tovar()
+        self.close()
+        self.main_window.show()
 
     def load_combo_box(self):
         with Session(engine) as db:

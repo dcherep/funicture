@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.11.2
+## Created by: Qt User Interface Compiler version 6.12.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -48,7 +48,7 @@ class Ui_Widget(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 648, 411))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 648, 414))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -120,6 +120,9 @@ class Ui_Widget(object):
         self.pushButton_2 = QPushButton(self.groupBox_3)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(10, 320, 251, 24))
+        self.pushButton_3 = QPushButton(self.groupBox_3)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setGeometry(QRect(10, 350, 251, 26))
 
         self.gridLayout.addWidget(self.groupBox_3, 1, 1, 1, 1)
 
@@ -155,5 +158,6 @@ class Ui_Widget(object):
         self.label_2.setText(QCoreApplication.translate("Widget", u"\u0412\u0441\u0435\u0433\u043e:", None))
         self.groupBox_6.setTitle(QCoreApplication.translate("Widget", u"\u041f\u043e\u0438\u0441\u043a", None))
         self.pushButton_2.setText(QCoreApplication.translate("Widget", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0442\u043e\u0432\u0430\u0440", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Widget", u"\u0417\u0430\u043a\u0430\u0437\u044b", None))
     # retranslateUi
 

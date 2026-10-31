@@ -45,14 +45,33 @@ class ShowProduct(QWidget):
             self.ui.l_1.setPixmap(QPixmap('picture.png'))
 
         self.ui.pushButton_2.clicked.connect(self.show_edit)
-        #self.ui.pushButton.clicked.connect(self.delete)
+        self.ui.pushButton.clicked.connect(self.delete)
 
     def show_edit(self):
         if self.edit_window is None:
             self.edit_window=EditProduct(self.main_window,self.tovar)
         self.edit_window.show()
 
-    #def delete(self):
+    def delete(self):
+        reply = QMessageBox.question(
+            self, 
+            "Подтверждение", 
+            f"Вы уверены, что хотите удалить товар:\n«{self.tovar.name}»?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.Yes:
+            from sqlalchemy.orm import Session
+            from models import engine, Tovar
+
+            with Session(engine) as db:
+                t = db.get(Tovar, self.tovar.id)
+                if t:
+                    db.delete(t)
+                    db.commit()
+            
+            self.main_window.load_tovar()
+            self.close()
 
 
 

@@ -58,6 +58,9 @@ class Zakaz(Base):
     user_id=Column(Integer,ForeignKey("users.id"),nullable=False )
     code=Column(Integer,nullable=False )
     status_id=Column(Integer,ForeignKey("status.id"),nullable=False )
+    status = relationship("Status", lazy="joined")
+    address = relationship("Address", lazy="joined")
+   
 
 class Tovar(Base):
     __tablename__="tovar"
